@@ -10,7 +10,7 @@ const cors = require('cors');
 //  Environment Variable
 //=============================
 const app = express();
-const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/alttpr";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/alttpr";
 const PORT = process.env.PORT || 3000;
 
 //=============================
@@ -25,8 +25,8 @@ app.use(cors());
 //=============================
 //  MongoDB Connection
 //=============================
-mongoose.connect(mongoURI, { useNewUrlParser: true }, () => {
-    console.log("Established Connection with mongo", mongoURI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true }, () => {
+    console.log("Established Connection with mongo", MONGODB_URI);
 });
 
 //======================
