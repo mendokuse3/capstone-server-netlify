@@ -19,8 +19,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.urlencoded({ extended: false })); // extended: false - does not allow nested objects in query strings
 app.use(express.json()); //use .json(), not .urlencoded()
 app.use(express.static("public")); // we need to tell express to use the public directory for static files... this way our app will find index.html as the route of the application! We can then attach React to that file!
-// app.use(cors({credentials: true, origin: '*'}));
-app.use(cors());
+app.use(cors({credentials: true, origin: '*'}));
+// app.use(cors());
 
 //=============================
 //  MongoDB Connection
@@ -37,6 +37,10 @@ mongoose.connection.on("disconnected", () => console.log("mongo disconnected"));
 
 
 const notesController = require('./controllers/notes');
+
+app.get('/', (req, res) => {
+    res.redirect('/notes');
+})
 
 app.use('/notes', notesController);
 
