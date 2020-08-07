@@ -11,7 +11,7 @@ const cors = require('cors');
 //=============================
 const app = express();
 // const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/alttpr";
-const MONGODB_URI = "mongodb+srv://leo:Leolovesham8@cluster0.k9s85.mongodb.net/alttpr?retryWrites=true&w=majority"
+const MONGODB_URI = "mongodb+srv://leo:Leolovesham8@cluster0.8m4mj.mongodb.net/leo?retryWrites=true&w=majority"
 const PORT = process.env.PORT || 3000;
 
 //=============================
