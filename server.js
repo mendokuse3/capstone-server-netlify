@@ -26,7 +26,7 @@ app.use(cors());
 //=============================
 //  MongoDB Connection
 //=============================
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false }, () => {
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }, () => {
     console.log("Established Connection with mongo", MONGODB_URI);
 });
 
